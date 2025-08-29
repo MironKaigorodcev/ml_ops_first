@@ -1,0 +1,28 @@
+schema: '2.0'
+stages:
+  prepare:
+    cmd: python -m src.data_loader --input data/heart.csv --output 
+      data/processed --artifacts artifacts
+    deps:
+    - path: data/heart.csv
+      hash: md5
+      md5: f8376ac9db4d25345aead44787474f27
+      size: 11328
+    - path: src/data_loader.py
+      hash: md5
+      md5: 071060802278d773e11be8374c8d0bc7
+      size: 2418
+    outs:
+    - path: artifacts/feature_names.parquet
+      hash: md5
+      md5: 023fe17c162555d0f08336ac68a5ae46
+      size: 1225
+    - path: artifacts/scaler.joblib
+      hash: md5
+      md5: 36ac07ebc7f372a7b15889d70ac1edc1
+      size: 1398
+    - path: data/processed
+      hash: md5
+      md5: 648c12725f4b5a7da589cd2344598b39.dir
+      size: 23688
+      nfiles: 4

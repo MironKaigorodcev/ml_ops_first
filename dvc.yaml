@@ -1,0 +1,21 @@
+stages:
+  prepare:
+    cmd: python -m src.data_loader --input data/heart.csv --output data/processed --artifacts artifacts
+    deps:
+      - src/data_loader.py
+      - data/heart.csv
+    outs:
+      - data/processed
+      - artifacts/feature_names.parquet
+      - artifacts/scaler.joblib
+
+  train:
+    cmd: python -m src.train_model --processed_dir data/processed --artifacts_dir artifacts --models_dir models --experiment HeartDisease
+    deps:
+      - src/train_model.py
+      - data/processed
+      - artifacts/feature_names.parquet
+      - artifacts/scaler.joblib
+    outs:
+      - models
+      - artifacts/classification_report.txt
