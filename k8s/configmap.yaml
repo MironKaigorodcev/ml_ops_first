@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: heart-infer-config
+data:
+  MODEL_PATH: "/app/models/model_gb.pkl"
+  SERVICE_NAME: "ml-inference-service"
+  LOG_LEVEL: "INFO"
+  WORKERS: "2"

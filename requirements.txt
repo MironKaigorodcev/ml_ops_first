@@ -1,7 +1,13 @@
 pandas
-scikit-learn
+scikit-learn==1.7.1
 ucimlrepo
 joblib
 mlflow
 numpy
 matplotlib
+fastapi
+uvicorn[standard]==0.30.6
+prometheus-client==0.20.0
+pydantic==2.9.2
+starlette==0.38.5
+gunicorn==22.0.0
